@@ -60,3 +60,6 @@ Environnement 3D : https://sketchfab.com/3d-models/house-interior-448be2ae6a1645
 Documentation x3Dom : https://examples.x3dom.org/simpleExamples.html
 
 
+EFREI Promo 2025 - Web 3D
+Aurélien AH-SANE
+Pierre HE
