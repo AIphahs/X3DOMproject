@@ -55,5 +55,8 @@ Explorer en 3D : L'utilisateur peut se déplacer librement dans la scène en mod
 Afficher des informations : En cliquant sur des objets ou équipements dans la scène 3D, des informations supplémentaires apparaîtront.
 ![Clicked](https://github.com/user-attachments/assets/49f3f648-2743-4fe4-86e6-548d2c9ce31f)
 
+## Sources
+Environnement 3D : https://sketchfab.com/3d-models/house-interior-448be2ae6a164542a6316113411a3e83
+Documentation x3Dom : https://examples.x3dom.org/simpleExamples.html
 
 
