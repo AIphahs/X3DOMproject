@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- written by BS Contact 8.300 -->
+
+
+<X3D profile="Immersive" version="3.0">
+	<head></head>
+	<Scene>
+		<Transform DEF="head">
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Sphere radius='1'>
+				</Sphere>
+			</Shape>
+		</Transform>
+		<Shape DEF="eye">
+			<Appearance>
+				<Material diffuseColor='0 0 0' emissiveColor='0 0 0'>
+				</Material>
+			</Appearance>
+			<Sphere radius='0.1'>
+			</Sphere>
+		</Shape>
+		<Transform translation='0.3 0.3 1'>
+			<Shape USE="eye"/>
+		</Transform>
+		<Transform translation='-0.3 0.3 1'>
+			<Shape USE="eye"/>
+		</Transform>
+		<Transform DEF="nose" translation='0 0.1 1'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 0 0' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Cone bottomRadius='0.1' height='0.2'>
+				</Cone>
+			</Shape>
+		</Transform>
+		<Transform DEF="mouth" rotation='1 0 0 3.14' translation='-0.0025964 -0.3 0.9685547'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 0 0' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Cylinder height='0.1' radius='0.4'>
+				</Cylinder>
+			</Shape>
+		</Transform>
+		<TimeSensor DEF="mouth_animation" cycleInterval='2' loop='true'>
+		</TimeSensor>
+		<PositionInterpolator DEF="mouth_translation" key='0,0.5,1' keyValue='0 -0.3 1,-0.09 -0.3 -0.09,0 -0.3 1'>
+		</PositionInterpolator>
+		<Transform DEF="left_ear" rotation='0 1 0 1.57' translation='1 0 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Cone bottomRadius='0.5' height='0.5'>
+				</Cone>
+			</Shape>
+		</Transform>
+		<Transform DEF="right_ear" rotation='0 1 0 -1.57' translation='-1 0 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Cone bottomRadius='0.5' height='0.5'>
+				</Cone>
+			</Shape>
+		</Transform>
+		<Transform DEF="neck" translation='0 -1 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Cylinder height='0.5' radius='0.5'>
+				</Cylinder>
+			</Shape>
+		</Transform>
+		<Transform DEF="hat" translation='0 1 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 0' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Cone bottomRadius='0.9' height='0.5'>
+				</Cone>
+			</Shape>
+		</Transform>
+		<Transform DEF="hair" translation='0 0.1 -0.3'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 0.5 0.5' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Sphere radius='1.2'>
+				</Sphere>
+			</Shape>
+		</Transform>
+		<Transform DEF="torax" rotation='0 0 1 1.57' translation='0 -2 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Cylinder height='3' radius='1'>
+				</Cylinder>
+			</Shape>
+		</Transform>
+		<Transform DEF="abdomen" rotation='0 0 1 1.57' translation='0 -3 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Cylinder height='2' radius='0.75'>
+				</Cylinder>
+			</Shape>
+		</Transform>
+		<Transform DEF="pelvis" rotation='0 0 1 1.57' translation='0 -4 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Cylinder height='1' radius='0.5'>
+				</Cylinder>
+			</Shape>
+		</Transform>
+		<Transform DEF="abdomen_1" rotation='0 0 1 1.57' translation='0 -4.5 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Box size='1 1.75 0.5'>
+				</Box>
+			</Shape>
+		</Transform>
+		<Transform DEF="left_arm" translation='2 -2.5 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Box size='0.5 2 0.5'>
+				</Box>
+			</Shape>
+		</Transform>
+		<Transform DEF="left_forearm" translation='2 -4.5 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Box size='0.5 1.25 0.5'>
+				</Box>
+			</Shape>
+		</Transform>
+		<Transform DEF="right_forearm" translation='-2 -4.5 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Box size='0.5 1.25 0.5'>
+				</Box>
+			</Shape>
+		</Transform>
+		<Transform DEF="right_arm" translation='-2 -2.5 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Box size='0.5 2 0.5'>
+				</Box>
+			</Shape>
+		</Transform>
+		<Transform DEF="left_shoulder" translation='2 -1.75 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Sphere radius='0.75'>
+				</Sphere>
+			</Shape>
+		</Transform>
+		<Transform DEF="right_shoulder" translation='-2 -1.75 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Sphere radius='0.75'>
+				</Sphere>
+			</Shape>
+		</Transform>
+		<Transform DEF="left_elbow" translation='2 -3.75 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Sphere radius='0.5'>
+				</Sphere>
+			</Shape>
+		</Transform>
+		<Transform DEF="right_elbow" translation='-2 -3.75 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Sphere radius='0.5'>
+				</Sphere>
+			</Shape>
+		</Transform>
+		<Transform DEF="left_wrist" translation='2 -5.25 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Sphere radius='0.4'>
+				</Sphere>
+			</Shape>
+		</Transform>
+		<Transform DEF="right_wrist" translation='-2 -5.25 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Sphere radius='0.4'>
+				</Sphere>
+			</Shape>
+		</Transform>
+		<Transform DEF="left_hand" rotation='0 0 1 1.57' translation='2 -5.75 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Box size='0.75 0.75 0.75'>
+				</Box>
+			</Shape>
+		</Transform>
+		<Transform DEF="right_hand" rotation='0 0 1 -1.57' translation='-2 -5.75 0'>
+			<Shape>
+				<Appearance>
+					<Material diffuseColor='1 1 1' emissiveColor='0 0 0'>
+					</Material>
+				</Appearance>
+				<Box size='0.75 0.75 0.75'>
+				</Box>
+			</Shape>
+		</Transform>
+		<ROUTE fromNode="mouth_animation" fromField="fraction_changed" toNode="mouth_translation" toField="set_fraction">
+		</ROUTE>
+		<ROUTE fromNode="mouth_translation" fromField="value_changed" toNode="mouth" toField="set_translation">
+		</ROUTE>
+	</Scene>
+</X3D>

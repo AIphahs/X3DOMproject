@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3XDOM Project page</title>
+      <script type='text/javascript' src='./x3dom/x3dom.js'></script>
+      <link rel='stylesheet' type='text/css' href='./x3dom/x3dom.css'>
+    
+    <style>
+    html { 
+      color-scheme: light dark; 
+    }
+    body {
+      font-family: Tahoma, Verdana, Arial, sans-serif; 
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    x3d { 
+      width: 100%; 
+      height: 100%; 
+      border: solid 1px #ccc;
+      border-radius: 10px;
+      margin: 0 auto;
+      text-align: center;
+      display: block;
+    }
+
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      text-align: justify;
+      border: solid 1px #ccc;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #444;
+    }
+
+    button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #red {
+      background-color: #dc3545;
+    }
+
+    #red:hover {
+      background-color: #c82333;
+    }
+
+    #green {
+      background-color: #28a745;
+    }
+
+    #green:hover {
+      background-color: #218838;
+    }
+
+    .sketchfab-embed-wrapper {
+      margin: 20px auto;
+      width: 80%;
+      border: solid 1px #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .sketchfab-embed-wrapper iframe {
+      width: 100%;
+      height: 600px;
+    }
+
+    p {
+      text-align: center;
+      color: #666;
+    }
+
+    h1 {
+      text-align:center;
+    
+      text-transform:uppercase;
+      font-size:26px; letter-spacing:1px;
+      
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      grid-template-rows: 16px 0;
+      grid-gap: 22px;
+    }
+
+    h1:after,h1:before {
+      content: " ";
+      display: block;
+      border-bottom: 2px solid #ccc;
+      background-color:#f8f8f8;
+    }
+
+
+    .nav-button {
+      text-align: center;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+    </style>
+
+    <script>
+      function switchView(viewpointName) {
+        const viewpoint = document.querySelector(`[DEF='${viewpointName}']`);
+        if (viewpoint) {
+            viewpoint.setAttribute('set_bind', 'true');
+        }
+        console.log(viewpointName);
+      }
+
+
+      // Function to navigate to the room
+      function navigateTo(room) {
+        console.log(room);
+        const viewpoint = document.querySelector(`[DEF='${room}']`);
+        if (viewpoint) {
+            viewpoint.setAttribute('set_bind', 'true');
+        }
+      }
+
+
+      // Function to handle the event when an object is clicked (sphere, box, cylinder)
+      function eventClicked() {
+        alert("You clicked! Boop!");
+      }
+      // Here we didn't specify the event depending on the object clicked
+      // But, we can specify the event for each object clicked : sphere, box, cylinder / Pillow, Cheese, etc.
+
+    </script>
+
+  </head>
+
+
+  <body>
+    <h1>My first page 3xdom</h1>
+    <div class="container">
+      <h2>First 3D Model with X3Dom -- TP </h2>
+      <p> A character playing with his tongue</p>
+      <x3d width='500px' height='500px'>
+             
+        <scene>
+          <!-- Inline inclusion of the XML file -->
+          <inline url='./model/tman.x3d'></inline>
+  
+          <!-- Viewpoints -->
+          <viewpoint DEF="frontView" position="0 0 5" description="Front View"></viewpoint>
+          <viewpoint DEF="sideView" position="5 0 0" orientation="0 -2 0 -1.57" description="Side View"></viewpoint>
+          <viewpoint DEF="topView" position="0 5 0" orientation="1 0 0 -1.57" description="Top View"></viewpoint>
+  
+        </scene>
+
+      </x3d>
+  
+      <!-- Button pannel for view navigation of tman -->
+      <div class="nav-button">
+        <button onclick="switchView('frontView')">Front View</button>
+        <button onclick="switchView('sideView')">Side View</button>
+        <button onclick="switchView('topView')">Top View</button>
+      </div> 
+  
+    </div>
+
+    <div class="container">
+      <h1> House 2D View</h1>
+      <br>
+      <a href=""><img src="./house/plan.png" alt="plan" width="100%"></a>
+    </div>
+
+
+    <div class="container">
+      <h1>3D Model</h1>
+      <p>Here is a 3D model of a house.</p>
+
+      <x3d width='100%' height='600px'>
+
+
+        <scene>
+          <!-- Creation of objects -->
+          <!-- A Cylinder in Guest Room -->
+          <Transform translation="1000 50 300">
+            <Shape onclick="eventClicked()">
+              <Cylinder height="100" radius="50"></Cylinder>
+              <Appearance>
+                <Material diffuseColor="1 1 1"></Material>
+              </Appearance>
+            </Shape>
+          </Transform>
+
+
+          <!-- A sphere in living room -->
+          <Transform translation="50 50 -100">
+            <Shape onclick="eventClicked()">
+              <Sphere radius="50"></Sphere>
+              <Appearance>
+                <Material diffuseColor="0 0 1"></Material>
+              </Appearance>
+            </Shape>
+          </Transform>
+
+
+          <!-- A box in kitchen -->
+          <Transform translation="1100 50 -200">
+            <Shape onclick="eventClicked()">
+              <Box size="100 100 100"></Box>
+              <Appearance>
+                <Material diffuseColor="1 1 0"></Material>
+              </Appearance>
+            </Shape>
+          </Transform>
+          
+          <!-- Inline inclusion of the XML file -->            
+          <inline url='./house/house-interior.x3d'></inline>
+
+          <!-- overview -->
+          <viewpoint DEF="overview" position="200 2000 0" orientation="1 0 0 -1.57" description="Overview"></viewpoint>
+
+          <!-- Viewpoints -->
+          <viewpoint DEF="house-bedroom" position="-500 1000 -200" orientation="1 0 0 -1.57" description="Bedroom"></viewpoint>
+          <viewpoint DEF="house-bathroom" position="-500 1000 300" orientation="1 0 0 -1.57" description="Bathroom"></viewpoint>
+          <viewpoint DEF="house-livingroom" position="0 1000 0" orientation="1 0 0 -1.57" description="Living room"></viewpoint>
+          <viewpoint DEF="house-guestroom" position="1000 1000 300" orientation="1 0 0 -1.57" description="Guest room"></viewpoint>
+          <viewpoint DEF="house-kitchen" position="1000 1000 -200" orientation="1 0 0 -1.57" description="Kitchen"></viewpoint>
+          
+          <!-- Navigation Info -->
+          <viewpoint DEF = "walk" position="0 100 500" orientation="1 0 0 0" description="Walk"></viewpoint>
+         
+          <NavigationInfo type='"WALK"' speed="100" avatarSize="10 1.6 1" visibilityLimit="100.0" />
+        
+          <!-- Collision -->
+          <Collision enabled="true" />
+            
+        </scene>
+
+
+      </x3d>
+
+
+      <div class="nav-button">
+        <!-- Button for navigation -->
+
+        <!-- Overview -->
+        <button id="green" onclick="navigateTo('overview')">Overview</button>
+
+        <!-- Bedroom -->
+        <button onclick="navigateTo('house-bedroom')">Bedroom</button>
+        <!-- Bathroom -->
+        <button onclick="navigateTo('house-bathroom')">Bathroom</button>
+        <!-- Living room -->
+        <button onclick="navigateTo('house-livingroom')">Living room</button>
+        <!-- Guest room -->
+        <button onclick="navigateTo('house-guestroom')">Guest room</button>
+        <!-- Kitchen -->
+        <button onclick="navigateTo('house-kitchen')">Kitchen</button>
+
+
+
+        <!-- Walk -->
+        <button id="red" onclick="switchView('walk')">Walk</button>
+
+      </div>
+
+    </div>
+    
+  </body>
+
+</html>
