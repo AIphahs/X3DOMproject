@@ -29,3 +29,31 @@ Ce projet consiste en la création d'un site internet permettant de naviguer et 
 1. Clonez ce dépôt sur votre machine locale :
    ```bash
    git clone https://github.com/AIphahs/X3DOMproject.git
+
+## Utilisation
+- Installez et configurez NGINX sur votre machine en suivant les instructions sur le site officiel : NGINX Installation.
+
+- Placez le dossier du projet dans le répertoire de votre serveur NGINX (par défaut, /usr/share/nginx/html).
+
+- Assurez-vous que le serveur NGINX est bien configuré pour servir les fichiers statiques (HTML, CSS, JS) et les modèles X3D.
+
+- Accédez à votre site via un navigateur compatible en utilisant l'URL appropriée (par défaut, http://localhost:8080)
+
+## Usage
+Une fois le site en ligne :
+
+Explorer les différentes vues possibles : Overview / Bathroom / Living Room / Bedroom / Guestromm / Kitchen
+![Overview](https://github.com/user-attachments/assets/40649020-919f-4b57-ad3a-97c165f2d25c)
+
+Explorer en 3D : L'utilisateur peut se déplacer librement dans la scène en mode "marche" ou utiliser les points de vue prédéfinis pour explorer l'environnement.
+![Mouse view 1](https://github.com/user-attachments/assets/6df5402d-bf52-46c2-b08f-49f0da259b53)
+![Mouse view 2](https://github.com/user-attachments/assets/5afa71a3-0120-4ec9-a537-bb26f21d5cb7)
+![Mouse view 3](https://github.com/user-attachments/assets/b99f7144-346e-4a89-bff6-424a8d56450d)
+![Mouse view 4](https://github.com/user-attachments/assets/38779d61-fd6f-4296-91e6-98feef36f531)
+
+
+Afficher des informations : En cliquant sur des objets ou équipements dans la scène 3D, des informations supplémentaires apparaîtront.
+![Clicked](https://github.com/user-attachments/assets/49f3f648-2743-4fe4-86e6-548d2c9ce31f)
+
+
+
